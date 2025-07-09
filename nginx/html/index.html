@@ -53,10 +53,8 @@
         // Set cookie (valid 1 hour)
         document.cookie = `AuthToken=${token}; path=/; max-age=3600`;
 
-        // Redirect to the original page user was trying to access
-        const urlParams = new URLSearchParams(window.location.search);
-        const redirectUrl = urlParams.get('redirect') || '/store1/index.html';
-        window.location.href = redirectUrl;
+        // Redirect to protected area (you can adjust this)
+        window.location.href = "/store1/index.html";
 
       } catch (err) {
         document.getElementById("errorMsg").textContent = "Error during login";
