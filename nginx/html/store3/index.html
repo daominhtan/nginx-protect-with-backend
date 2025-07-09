@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Store 3</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .logout-btn { 
+      background-color: #dc3545; 
+      color: white; 
+      border: none; 
+      padding: 10px 20px; 
+      border-radius: 5px; 
+      cursor: pointer; 
+    }
+    .logout-btn:hover { background-color: #c82333; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Store 3 content - protected</h1>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+  
+  <script>
+    function logout() {
+      // Xóa cookie AuthToken
+      document.cookie = "AuthToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      // Chuyển hướng về trang login
+      window.location.href = "/login";
+    }
+  </script>
+</body>
+</html>
